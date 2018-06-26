@@ -254,7 +254,11 @@ app.post('/api/hello', (req, res) => {
 
   console.log('flight_id :' +flight_id);
 
-   AA2();
+   //AA2();
+   var timer = setTimeout(function(){
+      AA2();
+      clearTimeout(timer);
+   }, 500)
 
   var timer2 = setTimeout(function(){
     res.end();
