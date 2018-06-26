@@ -96,7 +96,7 @@ class App extends Component {
                                              hour: "numeric",
                                              minute: "numeric"});
     currenttime = currenttime.substr(0, 2);
-
+   if movies.length >= 1 {
     const movies2 = this.state.movies2.map((movie2, index) => {
       console.log(movie2);
         if (String(movie2.atime).substr(0, 2) === currenttime) {
@@ -176,6 +176,7 @@ class App extends Component {
           }
       }
     })
+  }
      return movies2
   }
 
