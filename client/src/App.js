@@ -278,6 +278,8 @@ class App extends Component {
       const movies = await this._callApi()
        console.log(movies);
       this.setState({
+        movies: movies.data.item,
+        type: movies.type,
         movies2: movies.data2.item
       })
     }
