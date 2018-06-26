@@ -92,7 +92,7 @@ class App extends Component {
   }
 
   _renderMovies2 = () => {
-    if(movies2.length >= 1){
+    if(this.state.movies2.length >= 1){
       console.log('_renderMovies2 : length 1이상');
     }
    //  var currenttime = new Date().toLocaleTimeString('en-US', { hour12: false,
