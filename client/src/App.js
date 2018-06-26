@@ -380,11 +380,11 @@ handleSubmit = (e) => {
 
              var timer = setTimeout(function(){
                this._getMovies();
-                this._getMovies1();
-               this._getMovies2();
+
                 clearTimeout(timer);
              }, 800)
-
+             this._getMovies1();
+            this._getMovies2();
 
 }
 handleChange = (e) => {
