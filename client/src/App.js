@@ -266,8 +266,8 @@ class App extends Component {
      console.log(movies);
     this.setState({
       movies: movies.data.item,
-      type: movies.type
-    //  movies2: movies.data2.item
+      type: movies.type,
+      movies2: movies.data2.item
     })
   }
 
@@ -378,7 +378,7 @@ handleSubmit = (e) => {
            })
 
        this._getMovies();
-        this._getMovies1();
+      //  this._getMovies1();
        this._getMovies2();
 
 }
