@@ -92,90 +92,93 @@ class App extends Component {
   }
 
   _renderMovies2 = () => {
-    var currenttime = new Date().toLocaleTimeString('en-US', { hour12: false,
-                                             hour: "numeric",
-                                             minute: "numeric"});
-    currenttime = currenttime.substr(0, 2);
-   console.log('_renderMovies2');
-    const movies2 = this.state.movies2.map((movie2, index) => {
-      console.log(movie2);
-        if (String(movie2.atime).substr(0, 2) === currenttime) {
-          if(this.state.type === '0' && (terminal2 === 'P01' || terminal2 === 'P02')) { //출발이고, 1터미널 일때
-             return (
-               <div key={movie2.atime}>
-                 <table class="table table-bordered">
-                   <tr>
-                     <th class="T1SUM5">T1 출국장1,2</th>
-                     <th class="T1SUM6">T1 출국장3</th>
-                     <th class="T1SUM7">T1 출국장4</th>
-                     <th class="T1SUM8">T1 출국장5,6</th>
-                   </tr>
-                   <tr>
-                     <td>{movie2.t1sum5}</td>
-                     <td>{movie2.t1sum6}</td>
-                     <td>{movie2.t1sum7}</td>
-                     <td>{movie2.t1sum8}</td>
-                   </tr>
-                  </table>
-               </div>
-             )
-
-          } else if(this.state.type === '1'&& (terminal2 === 'P01' || terminal2 === 'P02')){ //도착이고, 1터미널 일때
-            return (
-              <div key={movie2.atime}>
-                <table class="table table-bordered">
-                  <tr>
-                    <th class="T1SUM1">T1 입국장 동편(A,B)</th>
-                    <th class="T1SUM2">T1 입국장 서편(E,F)</th>
-                    <th class="T1SUM3">T1 입국심사(C)</th>
-                    <th class="T1SUM4">T1 입국심사(D)</th>
-                  </tr>
-                  <tr>
-                    <td>{movie2.t1sum1}</td>
-                    <td>{movie2.t1sum2}</td>
-                    <td>{movie2.t1sum3}</td>
-                    <td>{movie2.t1sum4}</td>
-                  </tr>
-                 </table>
-              </div>
-
-            )
-          } else if(this.state.type === '0' && terminal2 === 'P03') { //출발이고, 2터미널일때
-             return (
-               <div key={movie2.atime}>
-                 <table class="table table-bordered">
-                   <tr>
-                     <th class="T2sum3">T2 출국장1</th>
-                     <th class="T2sum4">T2 출국장2</th>
-                   </tr>
-                   <tr>
-                     <td>{movie2.t2sum3}</td>
-                     <td>{movie2.t2sum4}</td>
-                   </tr>
-                  </table>
-               </div>
-
-             )
-
-          } else if(this.state.type === '1' && terminal2 === 'P03') { //도착이고, 2터미널 일때
-            return (
-              <div key={movie2.atime}>
-                <table class="table table-bordered">
-                  <tr>
-                    <th class="T2sum1">T2 출국장1</th>
-                    <th class="T2sum2">T2 출국장2</th>
-                  </tr>
-                  <tr>
-                    <td>{movie2.t2sum1}</td>
-                    <td>{movie2.t2sum2}</td>
-                  </tr>
-                 </table>
-              </div>
-
-            )
-          }
-      }
-    })
+    if(movies2.length >= 1){
+      console.log('_renderMovies2 : length 1이상');
+    }
+   //  var currenttime = new Date().toLocaleTimeString('en-US', { hour12: false,
+   //                                           hour: "numeric",
+   //                                           minute: "numeric"});
+   //  currenttime = currenttime.substr(0, 2);
+   // console.log('_renderMovies2');
+   //  const movies2 = this.state.movies2.map((movie2, index) => {
+   //    console.log(movie2);
+   //      if (String(movie2.atime).substr(0, 2) === currenttime) {
+   //        if(this.state.type === '0' && (terminal2 === 'P01' || terminal2 === 'P02')) { //출발이고, 1터미널 일때
+   //           return (
+   //             <div key={movie2.atime}>
+   //               <table class="table table-bordered">
+   //                 <tr>
+   //                   <th class="T1SUM5">T1 출국장1,2</th>
+   //                   <th class="T1SUM6">T1 출국장3</th>
+   //                   <th class="T1SUM7">T1 출국장4</th>
+   //                   <th class="T1SUM8">T1 출국장5,6</th>
+   //                 </tr>
+   //                 <tr>
+   //                   <td>{movie2.t1sum5}</td>
+   //                   <td>{movie2.t1sum6}</td>
+   //                   <td>{movie2.t1sum7}</td>
+   //                   <td>{movie2.t1sum8}</td>
+   //                 </tr>
+   //                </table>
+   //             </div>
+   //           )
+   //
+   //        } else if(this.state.type === '1'&& (terminal2 === 'P01' || terminal2 === 'P02')){ //도착이고, 1터미널 일때
+   //          return (
+   //            <div key={movie2.atime}>
+   //              <table class="table table-bordered">
+   //                <tr>
+   //                  <th class="T1SUM1">T1 입국장 동편(A,B)</th>
+   //                  <th class="T1SUM2">T1 입국장 서편(E,F)</th>
+   //                  <th class="T1SUM3">T1 입국심사(C)</th>
+   //                  <th class="T1SUM4">T1 입국심사(D)</th>
+   //                </tr>
+   //                <tr>
+   //                  <td>{movie2.t1sum1}</td>
+   //                  <td>{movie2.t1sum2}</td>
+   //                  <td>{movie2.t1sum3}</td>
+   //                  <td>{movie2.t1sum4}</td>
+   //                </tr>
+   //               </table>
+   //            </div>
+   //
+   //          )
+   //        } else if(this.state.type === '0' && terminal2 === 'P03') { //출발이고, 2터미널일때
+   //           return (
+   //             <div key={movie2.atime}>
+   //               <table class="table table-bordered">
+   //                 <tr>
+   //                   <th class="T2sum3">T2 출국장1</th>
+   //                   <th class="T2sum4">T2 출국장2</th>
+   //                 </tr>
+   //                 <tr>
+   //                   <td>{movie2.t2sum3}</td>
+   //                   <td>{movie2.t2sum4}</td>
+   //                 </tr>
+   //                </table>
+   //             </div>
+   //
+   //           )
+   //
+   //        } else if(this.state.type === '1' && terminal2 === 'P03') { //도착이고, 2터미널 일때
+   //          return (
+   //            <div key={movie2.atime}>
+   //              <table class="table table-bordered">
+   //                <tr>
+   //                  <th class="T2sum1">T2 출국장1</th>
+   //                  <th class="T2sum2">T2 출국장2</th>
+   //                </tr>
+   //                <tr>
+   //                  <td>{movie2.t2sum1}</td>
+   //                  <td>{movie2.t2sum2}</td>
+   //                </tr>
+   //               </table>
+   //            </div>
+   //
+   //          )
+   //        }
+   //    }
+   //  })
      return movies2
   }
 
@@ -353,8 +356,6 @@ handleSubmit = (e) => {
             console.log(json);
           })
 
-
-
        fetch('/api/hello2',{
            method: 'POST',
            body: JSON.stringify(reqBody2),
@@ -398,7 +399,7 @@ handleChange2 = (e) => {
     return (
       <div className="App">
         <div className="Top">
-          <a href="http://localhost:3000/api/hello">
+          <a href="https://salty-woodland-13271.herokuapp.com/">
             <img src="/image/Incheon_airport.png" style={{width: '500px', height: '120px'}}></img>
          </a>
         </div>
@@ -417,7 +418,7 @@ handleChange2 = (e) => {
           </div>
           <div className="Passenger_info">
             <p>{this.state.movies ? terminal +' 혼잡도 현황' : ''}</p>
-            <div className="App-intro2">{this.state.movies2? ? this._renderMovies2(): '정보 로딩이 지연중입니다.'}</div>
+            <div className="App-intro2">{this.state.movies ? this._renderMovies2(): '정보 로딩이 지연중입니다.'}</div>
           </div>
           <div className={`Parking_info ${this.state.checked && 'checked'}`}>
             <p>{this.state.movies ? terminal + ' 주차장 현황' : ''}</p>
