@@ -237,7 +237,7 @@ app.get('/api/hello', (req, res) => {
   var timer = setTimeout(function(){
    res.send({data: data, type: type, data2: data2, data3: data3});
      clearTimeout(timer);
-  }, 800)
+  }, 1200)
   //
   // var timer = setTimeout(function(){
   //  res.send({{data: data, type: type, data2: data2, data3: data3});

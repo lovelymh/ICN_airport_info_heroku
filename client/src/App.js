@@ -313,31 +313,27 @@ handleSubmit = (e) => {
   var reqBody = {input: input};
   var reqBody2 = {input2: this.refs.chk.checked};
   console.log('handleSubmit');
-  var timer2 = setTimeout(function(){
 
-    fetch('/api/hello',{
-        method: 'POST',
-        body: JSON.stringify(reqBody),
-  //      cache: 'default',
-        headers: {'Accept': 'application/json',
-          'Content-Type': 'application/json'}
+  fetch('/api/hello',{
+      method: 'POST',
+      body: JSON.stringify(reqBody),
+//      cache: 'default',
+      headers: {'Accept': 'application/json',
+        'Content-Type': 'application/json'}
+    })
+    .then(res => {
+    setTimeout(() => null, 0);
+    return res.text();
+    })
+    .then((res) => {
+        if (res.ok){
+          return res.json();
+        } else {
+          //throw new Error ('Something went wrong with your fetch');
+        }
+      }).then((json) => {
+        console.log(json);
       })
-      .then(res => {
-      setTimeout(() => null, 0);
-      return res.text();
-      })
-      .then((res) => {
-          if (res.ok){
-            return res.json();
-          } else {
-            //throw new Error ('Something went wrong with your fetch');
-          }
-        }).then((json) => {
-          console.log(json);
-        })
-    clearTimeout(timer2);
-  }, 1000)
-
 
 
       fetch('/api/hello0',{
