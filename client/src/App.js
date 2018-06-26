@@ -96,7 +96,7 @@ class App extends Component {
                                              hour: "numeric",
                                              minute: "numeric"});
     currenttime = currenttime.substr(0, 2);
-   if movies.length >= 1 {
+   console.log('_renderMovies2');
     const movies2 = this.state.movies2.map((movie2, index) => {
       console.log(movie2);
         if (String(movie2.atime).substr(0, 2) === currenttime) {
@@ -176,7 +176,6 @@ class App extends Component {
           }
       }
     })
-  }
      return movies2
   }
 
@@ -266,8 +265,8 @@ class App extends Component {
      console.log(movies);
     this.setState({
       movies: movies.data.item,
-      type: movies.type,
-      movies2: movies.data2.item
+      type: movies.type
+    //  movies2: movies.data2.item
     })
   }
 
@@ -378,7 +377,7 @@ handleSubmit = (e) => {
            })
 
        this._getMovies();
-      //  this._getMovies1();
+        this._getMovies1();
        this._getMovies2();
 
 }
