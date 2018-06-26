@@ -417,7 +417,7 @@ handleChange2 = (e) => {
           </div>
           <div className="Passenger_info">
             <p>{this.state.movies ? terminal +' 혼잡도 현황' : ''}</p>
-            <div className="App-intro2">{this.state.movies ? this._renderMovies2(): ''}</div>
+            <div className="App-intro2">{this.state.movies2? ? this._renderMovies2(): '정보 로딩이 지연중입니다.'}</div>
           </div>
           <div className={`Parking_info ${this.state.checked && 'checked'}`}>
             <p>{this.state.movies ? terminal + ' 주차장 현황' : ''}</p>
