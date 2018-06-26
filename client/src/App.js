@@ -179,7 +179,7 @@ class App extends Component {
    //        }
    //    }
    //  })
-     return movies2
+  //   return movies2
   }
 
   _renderMovies3 = () => {
