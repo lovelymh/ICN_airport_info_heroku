@@ -86,6 +86,7 @@ function AA2(){
                       })
                 })
             }
+
           // }).then(function (repos) {
           //   data2 = '';
           //   rq({
@@ -128,7 +129,8 @@ function AA2(){
           //        })
           //    }
           // })
-    }
+    })
+}
 }
 
 function AA4(){
