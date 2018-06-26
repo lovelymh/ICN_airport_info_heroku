@@ -235,18 +235,18 @@ function AA3(){
 app.get('/api/hello', (req, res) => {
 
   var timer = setTimeout(function(){
-   res.send({data: data, type: type});
+   res.send({data: data, type: type, data2: data2, data3: data3});
      clearTimeout(timer);
   }, 800)
 
   var timer = setTimeout(function(){
-   res.send({data2: data2});
+   res.send({{data: data, type: type, data2: data2, data3: data3});
      clearTimeout(timer);
   }, 800)
 
 
   var timer = setTimeout(function(){
-   res.send({data3: data3});
+   res.send({{data: data, type: type, data2: data2, data3: data3});
      clearTimeout(timer);
   }, 800)
 
