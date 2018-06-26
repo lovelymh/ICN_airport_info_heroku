@@ -1,0 +1,23 @@
+{
+  "name": "react-full-stack",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && npm run start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "express": "^4.16.2",
+    "express-delay": "^0.2.0",
+    "express-delayed-response": "^0.4.1",
+    "http": "0.0.0",
+    "request": "^2.86.0",
+    "request-promise": "^4.2.2",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
