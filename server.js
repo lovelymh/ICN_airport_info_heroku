@@ -44,13 +44,13 @@ var parkchk = false;
 const port = process.env.PORT || 5000;
 console.log('GGA');
 
-function AA2(){
+async function AA2(){
     if(flight_id === ''){ //안넣은 경우는 동작하지 않는다.
         console.log('flight_id 없음!')
     } else {
       data = '';
       type = '';
-      rq({
+      await rq({
             url: url + ServiceKey + page+ ff + flight_id,
             method: 'GET'
           }, function (error, response, body) {
@@ -69,7 +69,7 @@ function AA2(){
               //console.log('User has %d repos', repos.length);
            if(type === ''){
              data = '';
-              rq({
+              await rq({
                     url: url2 + ServiceKey + page+ ff + flight_id,
                     method: 'GET'
                   }, function (error, response, body) {
@@ -237,7 +237,7 @@ app.get('/api/hello', (req, res) => {
   var timer = setTimeout(function(){
    res.send({data: data, type: type, data2: data2, data3: data3});
      clearTimeout(timer);
-  }, 1200)
+  }, 800)
   //
   // var timer = setTimeout(function(){
   //  res.send({{data: data, type: type, data2: data2, data3: data3});
