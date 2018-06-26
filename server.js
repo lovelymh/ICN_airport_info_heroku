@@ -87,26 +87,26 @@ function AA2(){
                 })
             }
 
-          // }).then(function (repos) {
-          //   data2 = '';
-          //   rq({
-          //         url: url3 + ServiceKey + page+ ff + flight_id,
-          //         method: 'GET'
-          //       }, function (error, response, body) {
-          //            parser.parseString(body, function(err, result){
-          //             console.log('내부함수3');
-          //             //console.log(JSON.stringify(data3));
-          //             data2= result.response.body[0].items[0];
-          //             if (data2){
-          //                 console.log('공항 혼잡도 데이터 조회 결과 있음!');
-          //
-          //             } else {
-          //                 console.log('공항 혼잡도 데이터 조회 결과 없음!');
-          //
-          //             }
-          //           })
-          //     })
-          //   })
+          }).then(function (repos) {
+            data2 = '';
+            rq({
+                  url: url3 + ServiceKey + page+ ff + flight_id,
+                  method: 'GET'
+                }, function (error, response, body) {
+                     parser.parseString(body, function(err, result){
+                      console.log('내부함수3');
+                      //console.log(JSON.stringify(data3));
+                      data2= result.response.body[0].items[0];
+                      if (data2){
+                          console.log('공항 혼잡도 데이터 조회 결과 있음!');
+
+                      } else {
+                          console.log('공항 혼잡도 데이터 조회 결과 없음!');
+
+                      }
+                    })
+              })
+            })
           // }).then(function (repos) {
           //   if(parkchk === true){
           //     data3 = '';
@@ -129,7 +129,7 @@ function AA2(){
           //        })
           //    }
           // })
-    })
+  //  })
 }
 }
 
@@ -258,7 +258,7 @@ app.post('/api/hello', (req, res) => {
    var timer = setTimeout(function(){
       AA2();
       clearTimeout(timer);
-   }, 500)
+   }, 800)
 
   var timer2 = setTimeout(function(){
     res.end();
@@ -267,20 +267,20 @@ app.post('/api/hello', (req, res) => {
 
 })
 
-app.post('/api/hello0', (req, res) => {
-  console.log(req.body.input);
-  flight_id = req.body.input;
-
-  console.log('flight_id :' +flight_id);
-
-
-   AA4();
-
-   var timer2 = setTimeout(function(){
-     res.end();
-     clearTimeout(timer2);
-   }, 2000)
-})
+// app.post('/api/hello0', (req, res) => {
+//   console.log(req.body.input);
+//   flight_id = req.body.input;
+//
+//   console.log('flight_id :' +flight_id);
+//
+//
+//    AA4();
+//
+//    var timer2 = setTimeout(function(){
+//      res.end();
+//      clearTimeout(timer2);
+//    }, 2000)
+// })
 
 app.post('/api/hello2', (req, res) => {
   parkchk = req.body.input2;
