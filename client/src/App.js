@@ -274,7 +274,7 @@ class App extends Component {
   }
 
      _getMovies1 = async () => {
-       console.log('_getMovies');
+       console.log('_getMovies1');
       const movies = await this._callApi()
        console.log(movies);
       this.setState({
@@ -378,11 +378,8 @@ handleSubmit = (e) => {
              console.log(json);
            })
 
-             var timer = setTimeout(function(){
-               this._getMovies();
 
-                clearTimeout(timer);
-             }, 800)
+            this._getMovies();
              this._getMovies1();
             this._getMovies2();
 
