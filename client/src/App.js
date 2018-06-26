@@ -265,10 +265,20 @@ class App extends Component {
      console.log(movies);
     this.setState({
       movies: movies.data.item,
-      type: movies.type,
-      movies2: movies.data2.item
+      type: movies.type
+    //  movies2: movies.data2.item
     })
   }
+
+     _getMovies1 = async () => {
+       console.log('_getMovies');
+      const movies = await this._callApi()
+       console.log(movies);
+      this.setState({
+        movies2: movies.data2.item
+      })
+    }
+
 
   _getMovies2 = async () => {
     console.log('_getMovies2');
@@ -322,6 +332,28 @@ handleSubmit = (e) => {
         console.log(json);
       })
 
+      fetch('/api/hello0',{
+          method: 'POST',
+          body: JSON.stringify(reqBody),
+          cache: 'default',
+          headers: {'Accept': 'application/json',
+            'Content-Type': 'application/json'}
+
+        })
+        .then(res => {
+        setTimeout(() => null, 0);
+        return res.text();
+        })
+        .then((res) => {
+            if (res.ok){
+              return res.json();
+            } else {
+            }
+          }).then((json) => {
+            console.log(json);
+          })
+
+
 
        fetch('/api/hello2',{
            method: 'POST',
@@ -345,6 +377,7 @@ handleSubmit = (e) => {
            })
 
        this._getMovies();
+        this._getMovies1();
        this._getMovies2();
 
 }
