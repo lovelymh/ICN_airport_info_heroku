@@ -23,7 +23,7 @@ class App extends Component {
     // }
 
   _renderMovies = () => {
-;
+
     const movies = this.state.movies.map((movie, index) => {
        console.log('_renderMovies_length :'+this.state.movies.length);
 

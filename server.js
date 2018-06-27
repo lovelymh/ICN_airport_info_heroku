@@ -20,7 +20,7 @@ app.use('/js', express.static(__dirname + '/client/node_modules/bootstrap/dist/j
 //app.use('/js', express.static(__dirname + '/client/public/node_modules/jquery/dist')); // redirect JS jQuery
 app.use('/css', express.static(__dirname + '/client/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 app.use('/image', express.static(__dirname + '/client/src')); // redirect CSS bootstrap
-app.use(express.static(path.join(__dirname, 'client/build'))); //build경로
+app.use(express.static(path.join(__dirname, 'client/build'))); //build경로 잡아줌
 
 
 var url='http://openapi.airport.kr/openapi/service/StatusOfPassengerWeahter/getPassengerDeparturesW?';
